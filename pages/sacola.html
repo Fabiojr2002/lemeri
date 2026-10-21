@@ -1,0 +1,1787 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sacola de Compras • Luméri Perfumes Árabes</title>
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="../css/search.css">
+<style>
+:root{
+  --bg:#fbf9f5;
+  --bg-card:#ffffff;
+  --ink:#14192b;
+  --navy:#0f1d44;
+  --gold:#b8892f;
+  --gold-light:#e8c777;
+  --gold-subtle:rgba(184,137,47,.12);
+  --line:#eadfc6;
+  --line-light:rgba(184,137,47,.25);
+  --mut:#646a7d;
+  --success:#1f8b4d;
+  --danger:#c93b3b;
+  box-sizing:border-box;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:400 15px/1.55 Jost,system-ui,sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+h1,h2,h3,h4{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-weight:500;
+  margin:0;
+  line-height:1.15;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 36px;width:100%}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid rgba(184,137,47,.22);
+  box-shadow:0 4px 20px rgba(0,0,0,.03);
+}
+.header-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:82px;
+}
+.brand-logo{
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
+  transition:transform .25s ease,opacity .2s;
+}
+.brand-logo:hover{opacity:.9;transform:scale(1.02)}
+.brand-logo img{
+  height:62px;
+  width:auto;
+  max-height:62px;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.08));
+}
+.header-nav{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:32px;
+}
+.header-nav a{
+  font-family:'Jost',sans-serif;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#181818;
+  transition:color .2s;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.header-nav a:hover{color:#8f6d2b}
+.header-tools{display:flex;align-items:center;gap:18px}
+.tool-btn{
+  background:none;
+  border:none;
+  padding:6px;
+  cursor:pointer;
+  color:#181818;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  transition:transform .2s,color .2s;
+  text-decoration:none;
+}
+.tool-btn:hover{color:#8f6d2b;transform:scale(1.08)}
+.tool-btn svg{width:20px;height:20px;stroke-width:1.8}
+.cart-pill{
+  position:absolute;
+  top:-2px;
+  right:-4px;
+  background:#141414;
+  color:#fff;
+  font-size:10px;
+  font-weight:600;
+  min-width:16px;
+  height:16px;
+  line-height:16px;
+  border-radius:99px;
+  text-align:center;
+  padding:0 4px;
+}
+
+/* Page Steps & Hero Bar */
+.cart-hero{
+  background:linear-gradient(135deg,#fbf7ef 0%,#f5ecdc 100%);
+  border-bottom:1px solid rgba(184,137,47,.25);
+  padding:32px 0 28px;
+}
+.cart-hero-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:20px;
+}
+.cart-title-wrap h1{
+  font-size:clamp(32px,3.6vw,44px);
+  color:var(--navy);
+  font-weight:600;
+}
+.cart-title-wrap p{
+  margin:4px 0 0;
+  font-size:14px;
+  color:#5d5547;
+}
+
+/* Steps Indicator */
+.checkout-steps{
+  display:inline-flex;
+  align-items:center;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(184,137,47,.3);
+  padding:8px 18px;
+  border-radius:999px;
+  gap:12px;
+}
+.step-item{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.06em;
+  color:#827a6e;
+  text-transform:uppercase;
+}
+.step-item.active{
+  color:var(--navy);
+}
+.step-num{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:rgba(184,137,47,.18);
+  color:#8f6d2b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:700;
+}
+.step-item.active .step-num{
+  background:var(--navy);
+  color:#ffffff;
+}
+.step-separator{
+  width:18px;
+  height:1px;
+  background:rgba(184,137,47,.35);
+}
+
+/* Free Shipping Meter */
+.shipping-meter-wrap{
+  background:#ffffff;
+  border:1.5px solid rgba(184,137,47,.3);
+  border-radius:16px;
+  padding:14px 20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.03);
+  max-width:720px;
+  margin:0 auto;
+}
+.shipping-meter-msg{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:13.5px;
+  font-weight:500;
+  color:#2e281e;
+  margin-bottom:8px;
+  gap:12px;
+}
+.shipping-meter-msg b{color:var(--gold)}
+.shipping-meter-msg i{color:#b8892f;width:18px;height:18px}
+.shipping-bar-bg{
+  width:100%;
+  height:8px;
+  background:#eee6d5;
+  border-radius:99px;
+  overflow:hidden;
+}
+.shipping-bar-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#b8892f,#e8c777);
+  border-radius:99px;
+  transition:width .4s cubic-bezier(.16,1,.3,1);
+}
+
+/* Main Layout */
+main.cart-main{
+  padding:44px 0 80px;
+  flex:1;
+}
+.cart-layout{
+  display:grid;
+  grid-template-columns:1.8fr 1.2fr;
+  gap:36px;
+  align-items:flex-start;
+}
+
+/* Products Column */
+.cart-items-card{
+  background:#ffffff;
+  border:1.5px solid rgba(184,137,47,.32);
+  border-radius:24px;
+  box-shadow:0 10px 28px rgba(20,25,43,.09),0 2px 6px rgba(184,137,47,.08);
+  padding:28px 30px;
+}
+.cart-items-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(184,137,47,.22);
+  padding-bottom:18px;
+  margin-bottom:20px;
+}
+.cart-items-header h2{
+  font-size:26px;
+  color:var(--navy);
+  font-weight:600;
+}
+.btn-clear-cart{
+  background:none;
+  border:none;
+  color:#827a6e;
+  font-size:12px;
+  font-weight:500;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  transition:color .2s;
+  padding:4px 8px;
+  border-radius:6px;
+}
+.btn-clear-cart:hover{color:var(--danger)}
+.btn-clear-cart svg{width:14px;height:14px}
+
+/* Individual Cart Item */
+.cart-item{
+  display:grid;
+  grid-template-columns:110px 1fr auto;
+  gap:22px;
+  align-items:center;
+  padding:20px 0;
+  border-bottom:1px solid #f2eadc;
+  transition:background .2s;
+}
+.cart-item:last-child{border-bottom:none;padding-bottom:10px}
+.item-thumb{
+  width:110px;
+  height:110px;
+  background:radial-gradient(circle,#ffffff 40%,#f8f2e6 100%);
+  border:1.5px solid rgba(184,137,47,.28);
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.item-thumb img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.1));
+  transition:transform .3s ease;
+}
+.cart-item:hover .item-thumb img{transform:scale(1.06)}
+.item-details{display:flex;flex-direction:column}
+.item-brand{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#8f6d2b;
+  margin-bottom:2px;
+}
+.item-name{
+  font-size:20px;
+  color:#141414;
+  font-weight:600;
+  margin-bottom:4px;
+}
+.item-vol{
+  font-size:12px;
+  color:#736d62;
+  margin-bottom:10px;
+}
+.item-unit-price{
+  font-size:13.5px;
+  color:#473f32;
+  font-weight:500;
+}
+
+/* Quantity Controls */
+.item-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:12px;
+}
+.qty-control{
+  display:inline-flex;
+  align-items:center;
+  border:1.5px solid rgba(184,137,47,.35);
+  border-radius:999px;
+  overflow:hidden;
+  background:#ffffff;
+}
+.qty-btn{
+  background:none;
+  border:none;
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:#141414;
+  transition:background .2s,color .2s;
+}
+.qty-btn:hover{background:#f4ebe0;color:#8f6d2b}
+.qty-btn svg{width:14px;height:14px}
+.qty-val{
+  min-width:32px;
+  text-align:center;
+  font-size:13px;
+  font-weight:600;
+  color:#141414;
+}
+.item-subtotal{
+  font-size:18px;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:-.01em;
+}
+.btn-remove-item{
+  background:none;
+  border:none;
+  color:#9a9184;
+  cursor:pointer;
+  padding:4px;
+  border-radius:6px;
+  transition:color .2s,transform .2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.btn-remove-item:hover{color:var(--danger);transform:scale(1.1)}
+.btn-remove-item svg{width:16px;height:16px}
+
+/* Cart Footer Actions */
+.cart-items-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(184,137,47,.2);
+}
+.btn-continue{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#3b3327;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1.5px solid #dcd1be;
+  transition:all .2s ease;
+}
+.btn-continue:hover{
+  background:#141414;
+  color:#ffffff;
+  border-color:#141414;
+  transform:translateX(-3px);
+}
+.btn-continue svg{width:14px;height:14px}
+
+/* Summary Column */
+.cart-summary-card{
+  background:#ffffff;
+  border:1.5px solid rgba(184,137,47,.32);
+  border-radius:24px;
+  box-shadow:0 10px 28px rgba(20,25,43,.09),0 2px 6px rgba(184,137,47,.08);
+  padding:30px 28px;
+  position:sticky;
+  top:106px;
+}
+.cart-summary-card h2{
+  font-size:26px;
+  color:var(--navy);
+  font-weight:600;
+  border-bottom:1px solid rgba(184,137,47,.22);
+  padding-bottom:14px;
+  margin-bottom:20px;
+}
+
+/* Coupon Box */
+.coupon-box{
+  background:linear-gradient(135deg,#fdfbf7 0%,#f8f2e7 100%);
+  border:1.5px dashed rgba(184,137,47,.45);
+  border-radius:16px;
+  padding:14px 16px;
+  margin-bottom:22px;
+}
+.coupon-label{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#75581f;
+  margin-bottom:8px;
+}
+.coupon-label svg{width:13px;height:13px}
+.coupon-form{
+  display:flex;
+  gap:8px;
+}
+.coupon-input{
+  flex:1;
+  background:#ffffff;
+  border:1.5px solid rgba(184,137,47,.3);
+  border-radius:999px;
+  padding:8px 14px;
+  font-family:'Jost',sans-serif;
+  font-size:12.5px;
+  font-weight:500;
+  color:#141414;
+  text-transform:uppercase;
+  outline:none;
+}
+.coupon-input:focus{border-color:#b8892f}
+.btn-apply-coupon{
+  background:#141414;
+  color:#ffffff;
+  border:none;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .2s;
+}
+.btn-apply-coupon:hover{background:#b8892f}
+.coupon-hint{
+  font-size:11.5px;
+  color:#7a6d59;
+  margin-top:8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.quick-coupon-btn{
+  background:none;
+  border:none;
+  color:#8f6d2b;
+  font-weight:600;
+  text-decoration:underline;
+  padding:0;
+  cursor:pointer;
+  font-size:11.5px;
+}
+
+/* Shipping Calculator */
+.shipping-calc-box{
+  border-bottom:1px solid #f2eadc;
+  padding-bottom:18px;
+  margin-bottom:18px;
+}
+.shipping-calc-label{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:12.5px;
+  font-weight:600;
+  color:#2e281e;
+  margin-bottom:8px;
+}
+.shipping-calc-form{
+  display:flex;
+  gap:8px;
+}
+.shipping-input{
+  flex:1;
+  background:#fdfcf9;
+  border:1.5px solid rgba(184,137,47,.28);
+  border-radius:999px;
+  padding:7px 14px;
+  font-family:'Jost',sans-serif;
+  font-size:12.5px;
+  color:#141414;
+  outline:none;
+}
+.btn-calc-shipping{
+  background:#ffffff;
+  color:#141414;
+  border:1.5px solid rgba(184,137,47,.4);
+  padding:7px 16px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .2s;
+}
+.btn-calc-shipping:hover{background:#f8f2e6;border-color:#b8892f}
+
+/* Price Lines */
+.summary-line{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:14px;
+  color:#4a4439;
+  margin-bottom:10px;
+}
+.summary-line b{color:#141414}
+.summary-line.discount{
+  color:var(--success);
+  font-weight:600;
+}
+.summary-line.shipping-free{
+  color:var(--success);
+  font-weight:600;
+}
+.summary-divider{
+  height:1px;
+  background:rgba(184,137,47,.25);
+  margin:16px 0 18px;
+}
+.summary-total-line{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:6px;
+}
+.summary-total-label{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:24px;
+  font-weight:600;
+  color:var(--navy);
+}
+.summary-total-val{
+  font-size:28px;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:-.01em;
+  line-height:1;
+}
+.summary-installments{
+  font-size:12px;
+  color:#736d62;
+  text-align:right;
+  margin-bottom:6px;
+}
+.summary-pix-callout{
+  background:rgba(31,139,77,.08);
+  border:1px solid rgba(31,139,77,.25);
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:12px;
+  color:#156c39;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:22px;
+}
+.summary-pix-callout svg{width:15px;height:15px;flex-shrink:0}
+
+/* Checkout Buttons */
+.btn-checkout-primary{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  background:#0f1d44;
+  color:#ffffff;
+  border:1.5px solid #0f1d44;
+  padding:15px 22px;
+  border-radius:999px;
+  font-family:'Jost',sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .28s cubic-bezier(.16,1,.3,1);
+  box-shadow:0 8px 22px rgba(15,29,68,.25);
+  margin-bottom:12px;
+}
+.btn-checkout-primary:hover{
+  background:#b8892f;
+  border-color:#b8892f;
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(184,137,47,.35);
+}
+.btn-checkout-primary svg{width:16px;height:16px}
+
+.btn-checkout-whatsapp{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  background:#25d366;
+  color:#ffffff;
+  border:1.5px solid #25d366;
+  padding:15px 22px;
+  border-radius:999px;
+  font-family:'Jost',sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .28s cubic-bezier(.16,1,.3,1);
+  box-shadow:0 8px 24px rgba(37,211,102,.32);
+  margin-bottom:8px;
+}
+.btn-checkout-whatsapp:hover{
+  background:#1eb857;
+  border-color:#1eb857;
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(37,211,102,.42);
+}
+.btn-checkout-whatsapp svg{width:18px;height:18px;fill:currentColor}
+
+.btn-checkout-disabled{
+  background:#f8f3ea;
+  color:#7e7464;
+  border:1.5px dashed #cbbda3;
+  box-shadow:none;
+  padding:12px 20px;
+  font-size:11.5px;
+  margin-bottom:12px;
+}
+.btn-checkout-disabled:hover{
+  background:#f0e7d8;
+  border-color:#b8892f;
+  color:#14192b;
+  transform:none;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+.badge-dev-tag{
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  background:rgba(184,137,47,.18);
+  color:#8f6d2b;
+  padding:2px 8px;
+  border-radius:999px;
+  margin-left:6px;
+}
+
+/* Trust Badges in Summary */
+.summary-trust-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding-top:18px;
+  border-top:1px solid #f2eadc;
+}
+.trust-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:11px;
+  color:#595245;
+  font-weight:500;
+}
+.trust-item svg{width:15px;height:15px;color:#8f6d2b;flex-shrink:0}
+
+/* Empty State */
+.cart-empty-wrap{
+  background:#ffffff;
+  border:1.5px solid rgba(184,137,47,.32);
+  border-radius:24px;
+  box-shadow:0 10px 28px rgba(20,25,43,.09),0 2px 6px rgba(184,137,47,.08);
+  padding:60px 30px;
+  text-align:center;
+  max-width:680px;
+  margin:0 auto;
+}
+.cart-empty-icon{
+  width:84px;
+  height:84px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ffffff 40%,#f8f2e6 100%);
+  border:1.5px solid rgba(184,137,47,.3);
+  margin:0 auto 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#8f6d2b;
+}
+.cart-empty-icon svg{width:38px;height:38px}
+.cart-empty-wrap h2{
+  font-size:32px;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+.cart-empty-wrap p{
+  font-size:15px;
+  color:#61594d;
+  max-width:440px;
+  margin:0 auto 28px;
+}
+.btn-empty-shop{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#141414;
+  color:#ffffff;
+  border:1.5px solid #141414;
+  padding:14px 32px;
+  border-radius:9999px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  transition:all .25s ease;
+}
+.btn-empty-shop:hover{
+  background:#b8892f;
+  border-color:#b8892f;
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(184,137,47,.3);
+}
+
+/* Modal Checkout */
+.modal-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(15,20,34,.65);
+  backdrop-filter:blur(8px);
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal-content{
+  background:#ffffff;
+  border:1.5px solid rgba(184,137,47,.35);
+  border-radius:24px;
+  max-width:540px;
+  width:100%;
+  padding:32px;
+  box-shadow:0 24px 60px rgba(0,0,0,.22);
+  position:relative;
+  animation:modalIn .3s cubic-bezier(.16,1,.3,1);
+}
+@keyframes modalIn{
+  from{opacity:0;transform:translateY(20px) scale(.96)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.modal-close-btn{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:#827a6e;
+  padding:6px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:color .2s;
+}
+.modal-close-btn:hover{color:#141414}
+.modal-close-btn svg{width:20px;height:20px}
+.modal-header h3{
+  font-size:28px;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+.modal-header p{
+  font-size:13.5px;
+  color:#61594d;
+  margin:0 0 20px;
+}
+.modal-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:20px;
+}
+.modal-tab-btn{
+  background:#f8f4ec;
+  border:1.5px solid transparent;
+  padding:10px;
+  border-radius:12px;
+  font-size:12.5px;
+  font-weight:600;
+  color:#3d3527;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:all .2s;
+}
+.modal-tab-btn.active{
+  background:#ffffff;
+  border-color:#b8892f;
+  color:var(--navy);
+  box-shadow:0 4px 12px rgba(184,137,47,.15);
+}
+.pix-qr-wrap{
+  background:#fcf9f2;
+  border:1px solid #ebd9b8;
+  border-radius:16px;
+  padding:20px;
+  text-align:center;
+  margin-bottom:18px;
+}
+.pix-qr-img{
+  width:160px;
+  height:160px;
+  background:#ffffff;
+  border:1px solid #e0d0b0;
+  border-radius:12px;
+  margin:0 auto 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px;
+}
+.pix-qr-img img{width:100%;height:100%;object-fit:contain}
+.pix-copy-box{
+  display:flex;
+  background:#ffffff;
+  border:1.5px solid #d8caa9;
+  border-radius:999px;
+  overflow:hidden;
+  padding:3px 3px 3px 14px;
+  align-items:center;
+}
+.pix-copy-code{
+  font-size:11.5px;
+  color:#544a39;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  flex:1;
+}
+.btn-copy-pix{
+  background:#0f1d44;
+  color:#ffffff;
+  border:none;
+  padding:7px 16px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .2s;
+}
+.btn-copy-pix:hover{background:#b8892f}
+
+/* Toast */
+#toast{
+  position:fixed;
+  bottom:26px;
+  right:26px;
+  background:rgba(20,25,43,.94);
+  backdrop-filter:blur(10px);
+  color:#ffffff;
+  padding:14px 20px;
+  border-radius:999px;
+  border:1px solid rgba(232,199,119,.4);
+  font-size:13px;
+  font-weight:500;
+  box-shadow:0 12px 32px rgba(0,0,0,.22);
+  z-index:9999;
+  display:none;
+  align-items:center;
+  gap:10px;
+  animation:toastUp .3s ease;
+}
+#toast.on{display:flex}
+@keyframes toastUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+#toast svg{width:16px;height:16px;color:#e8c777}
+
+/* Footer */
+footer{
+  background:#0f1424;
+  color:#ede4d3;
+  padding:46px 0 0;
+  margin-top:auto;
+  border-top:1px solid rgba(184,137,47,.35);
+  position:relative;
+}
+footer .wrap{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:32px;
+  padding-bottom:30px;
+}
+footer h4{
+  color:#e8c777;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:19px;
+  font-weight:600;
+  letter-spacing:.04em;
+  margin:0 0 14px;
+}
+footer a{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:#b7af9e;
+  font-size:13.5px;
+  padding:3px 0;
+  transition:all .2s ease;
+}
+footer a:hover{
+  color:#ffffff;
+  transform:translateX(2px);
+}
+footer img{
+  width:130px;
+  display:block;
+  margin:0 auto 10px;
+  object-fit:contain;
+}
+.footer-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  max-width:260px;
+}
+.footer-brand small{
+  color:#9a9282;
+  display:block;
+  text-align:center;
+  line-height:1.55;
+  font-size:12.5px;
+}
+.footer-col{display:flex;flex-direction:column}
+.about-links{display:flex;flex-direction:column}
+.about-links .sep{display:none}
+
+.footer-link-wa{color:#25D366!important;font-weight:600}
+.footer-link-wa:hover{color:#40f484!important}
+.footer-link-wa svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+.footer-link-ig{color:#e8c777;font-weight:500}
+.footer-link-ig svg{width:14px;height:14px;stroke:#e8c777;flex-shrink:0}
+
+.footer-badges{
+  border-top:1px solid rgba(184,137,47,.22);
+  border-bottom:1px solid rgba(184,137,47,.22);
+  padding:14px 0;
+  background:rgba(0,0,0,.18);
+}
+.footer-badges-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:28px;
+}
+.footer-badge-item{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  color:#dfd6c6;
+  font-weight:500;
+  letter-spacing:.03em;
+}
+.footer-badge-item svg{
+  width:15px;
+  height:15px;
+  color:#e8c777;
+  stroke:#e8c777;
+  flex-shrink:0;
+}
+
+.copy{
+  text-align:center;
+  padding:16px 20px 24px;
+  font-size:12px;
+  color:#7e7769;
+  line-height:1.6;
+}
+
+@media(max-width:960px){
+  .cart-layout{grid-template-columns:1fr;gap:28px}
+  .cart-summary-card{position:static;top:auto}
+  .header-nav{display:none}
+  footer .wrap{
+    grid-template-columns:1fr 1fr;
+    gap:28px 24px;
+    padding-top:10px;
+    padding-bottom:24px;
+  }
+  .footer-brand{
+    grid-column:1 / -1;
+    max-width:100%;
+    margin:0 auto;
+    padding-bottom:22px;
+    border-bottom:1px solid rgba(184,137,47,.25);
+  }
+  .footer-col-about{
+    grid-column:1 / -1;
+    border-top:1px solid rgba(184,137,47,.2);
+    padding-top:20px;
+    text-align:center;
+    align-items:center;
+  }
+  .footer-col-about h4{margin-bottom:10px}
+  .about-links{
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .about-links .sep{
+    display:inline;
+    color:rgba(184,137,47,.4);
+    font-size:11px;
+  }
+  .footer-badges-wrap{gap:14px 20px}
+}
+@media(max-width:600px){
+  .cart-item{grid-template-columns:84px 1fr;gap:14px}
+  .item-thumb{width:84px;height:84px}
+  .item-actions{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center;padding-top:10px}
+  .checkout-steps{display:none}
+  footer .wrap{
+    grid-template-columns:1fr 1fr;
+    gap:24px 16px;
+    padding-top:6px;
+  }
+  .footer-brand img{width:120px}
+  .footer-brand small{font-size:12px}
+  footer h4{font-size:17px;margin-bottom:10px}
+  footer a{font-size:12.5px;padding:2.5px 0}
+  .about-links{gap:10px}
+  .footer-badge-item{font-size:11px}
+  .wrap{padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-wrap">
+    <a href="index.html" class="brand-logo" aria-label="Página Inicial Luméri">
+      <img src="../img/logo.png" alt="Luméri Perfumes Árabes">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">Início</a>
+      <a href="lancamentos.html">Lançamentos</a>
+      <a href="femininos.html">Femininos</a>
+      <a href="masculinos.html">Masculinos</a>
+      <a href="unissex.html">Unissex</a>
+      <a href="kits-presentes.html">Kits Presente</a>
+    </nav>
+    <div class="header-tools">
+      <button class="tool-btn" id="btn-search-trigger" aria-label="Buscar Perfumes"><i data-lucide="search"></i></button>
+      <a href="sacola.html" class="tool-btn" id="cart" aria-label="Sacola de Compras">
+        <i data-lucide="shopping-bag"></i>
+        <span id="n" class="cart-pill">0</span>
+      </a>
+      <button class="tool-btn" aria-label="Minha conta"><i data-lucide="user"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="cart-hero">
+  <div class="wrap">
+    <div class="cart-hero-header">
+      <div class="cart-title-wrap">
+        <h1>Sacola de Compras</h1>
+        <p>Revise suas fragrâncias selecionadas antes de finalizar o pedido</p>
+      </div>
+      <div class="checkout-steps">
+        <div class="step-item active">
+          <span class="step-num">1</span>
+          <span>Sacola</span>
+        </div>
+        <div class="step-separator"></div>
+        <div class="step-item">
+          <span class="step-num">2</span>
+          <span>Identificação</span>
+        </div>
+        <div class="step-separator"></div>
+        <div class="step-item">
+          <span class="step-num">3</span>
+          <span>Pagamento</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="shipping-meter-wrap">
+      <div class="shipping-meter-msg" id="shipping-msg">
+        <span><i data-lucide="truck"></i> Frete Grátis para todo o Brasil</span>
+        <span id="shipping-target-txt">Faltam <b>R$ 299,00</b></span>
+      </div>
+      <div class="shipping-bar-bg">
+        <div class="shipping-bar-fill" id="shipping-progress"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap cart-main">
+  <!-- Container with items (displayed if items > 0) -->
+  <div class="cart-layout" id="cart-content" style="display:none">
+    
+    <!-- Left Column: Items List -->
+    <div class="cart-items-card">
+      <div class="cart-items-header">
+        <h2>Itens Selecionados (<span id="cart-count-txt">0</span>)</h2>
+        <button class="btn-clear-cart" id="btn-clear" title="Esvaziar todos os itens">
+          <i data-lucide="trash-2"></i>
+          <span>Esvaziar Sacola</span>
+        </button>
+      </div>
+
+      <div id="cart-items-list">
+        <!-- Rendered via JS -->
+      </div>
+
+      <div class="cart-items-actions">
+        <a href="index.html#vendidos" class="btn-continue">
+          <i data-lucide="arrow-left"></i>
+          <span>Continuar Comprando</span>
+        </a>
+        <span style="font-size:12px;color:#7a7265"><i data-lucide="shield-check" style="width:14px;height:14px;vertical-align:middle;color:#b8892f"></i> Seus itens ficam salvos automaticamente</span>
+      </div>
+    </div>
+
+    <!-- Right Column: Order Summary -->
+    <div class="cart-summary-card">
+      <h2>Resumo do Pedido</h2>
+
+      <!-- Coupon Form -->
+      <div class="coupon-box">
+        <div class="coupon-label">
+          <i data-lucide="tag"></i>
+          <span>Cupom Promocional</span>
+        </div>
+        <form id="coupon-form" class="coupon-form">
+          <input type="text" id="coupon-input" class="coupon-input" placeholder="Digite seu cupom" aria-label="Código do cupom">
+          <button type="submit" class="btn-apply-coupon">Aplicar</button>
+        </form>
+        <div class="coupon-hint">
+          <span>Tem cupom de primeira compra?</span>
+          <button type="button" class="quick-coupon-btn" id="btn-quick-coupon">Usar LUMERI10 (-10%)</button>
+        </div>
+      </div>
+
+      <!-- Shipping Simulator -->
+      <div class="shipping-calc-box">
+        <div class="shipping-calc-label">
+          <span>Calcular Frete & Prazo:</span>
+          <span id="shipping-status-tag" style="color:var(--success);font-size:12px"></span>
+        </div>
+        <div class="shipping-calc-form">
+          <input type="text" id="cep-input" class="shipping-input" placeholder="00000-000" maxlength="9" aria-label="CEP para frete">
+          <button type="button" class="btn-calc-shipping" id="btn-calc-cep">Calcular</button>
+        </div>
+      </div>
+
+      <!-- Financial Summary Lines -->
+      <div class="summary-line">
+        <span>Subtotal dos Produtos:</span>
+        <b id="summary-subtotal">R$ 0,00</b>
+      </div>
+
+      <div class="summary-line discount" id="summary-discount-row" style="display:none">
+        <span id="discount-label">Desconto do Cupom:</span>
+        <b id="summary-discount">- R$ 0,00</b>
+      </div>
+
+      <div class="summary-line">
+        <span>Frete Estimado:</span>
+        <b id="summary-shipping">A calcular</b>
+      </div>
+
+      <div class="summary-divider"></div>
+
+      <div class="summary-total-line">
+        <span class="summary-total-label">Total do Pedido:</span>
+        <span class="summary-total-val" id="summary-total">R$ 0,00</span>
+      </div>
+
+      <div class="summary-installments" id="summary-installments">
+        ou em até 10x de R$ 0,00 sem juros
+      </div>
+
+      <div class="summary-pix-callout">
+        <i data-lucide="zap"></i>
+        <span id="summary-pix-txt">Pague via Pix e ganhe 5% de desconto extra</span>
+      </div>
+
+      <!-- WhatsApp Direct Option (Canal Oficial Ativo) -->
+      <button class="btn-checkout-whatsapp" id="btn-whatsapp-order">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.21 8.21 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24z"/></svg>
+        <span>FINALIZAR COMPRA VIA WHATSAPP</span>
+      </button>
+
+      <!-- Site Checkout Option (Inativo / Em desenvolvimento) -->
+      <button class="btn-checkout-primary btn-checkout-disabled" id="btn-open-checkout">
+        <i data-lucide="lock"></i>
+        <span>Finalizar Compra no Site</span>
+        <span class="badge-dev-tag">Em breve</span>
+      </button>
+
+      <a href="https://wa.me/5511976547465?text=Ol%C3%A1%2C%20estou%20na%20sacola%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20meu%20pedido%20na%20Lum%C3%A9ri" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:11.5px;color:#7e7464;text-decoration:none;margin-top:6px;padding:4px 0;transition:color .2s">
+        <i data-lucide="message-circle" style="width:14px;height:14px;color:#25D366"></i>
+        <span>Dúvidas na compra? Fale no WhatsApp: <b>(11) 97654-7465</b></span>
+      </a>
+
+      <!-- Trust Badges -->
+      <div class="summary-trust-grid">
+        <div class="trust-item">
+          <i data-lucide="shield-check"></i>
+          <span>Compra 100% Segura & SSL</span>
+        </div>
+        <div class="trust-item">
+          <i data-lucide="award"></i>
+          <span>100% Originais & Lacrados</span>
+        </div>
+        <div class="trust-item">
+          <i data-lucide="truck"></i>
+          <span>Envio com Rastreamento</span>
+        </div>
+        <div class="trust-item">
+          <i data-lucide="refresh-cw"></i>
+          <span>Troca Fácil em 7 Dias</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State (displayed if items == 0) -->
+  <div class="cart-empty-wrap" id="cart-empty" style="display:none">
+    <div class="cart-empty-icon">
+      <i data-lucide="shopping-bag"></i>
+    </div>
+    <h2>Sua Sacola Está Vazia</h2>
+    <p>Você ainda não escolheu seus perfumes. Explore nossos lotes recém-chegados da alta perfumaria árabe e adicione suas essências favoritas.</p>
+    <a href="index.html#vendidos" class="btn-empty-shop">
+      <i data-lucide="sparkles"></i>
+      <span>Explorar Coleções Luméri</span>
+    </a>
+  </div>
+</main>
+
+<!-- Modal Aviso: Compra pelo Site em Desenvolvimento -->
+<div class="modal-overlay" id="checkout-modal" role="dialog" aria-modal="true">
+  <div class="modal-content" style="max-width:480px;text-align:center;padding:36px 30px">
+    <button class="modal-close-btn" id="modal-close" aria-label="Fechar janela">
+      <i data-lucide="x"></i>
+    </button>
+
+    <div style="width:68px;height:68px;border-radius:50%;background:rgba(184,137,47,.12);border:1.5px solid rgba(184,137,47,.35);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#b8892f">
+      <i data-lucide="clock" style="width:32px;height:32px"></i>
+    </div>
+
+    <span style="display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f6d2b;background:rgba(184,137,47,.16);padding:4px 14px;border-radius:999px;margin-bottom:12px">Recurso em Desenvolvimento</span>
+
+    <h3 style="font-size:26px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0 0 12px;color:var(--navy);line-height:1.2">Finalização no Site em Breve</h3>
+
+    <p style="font-size:13.5px;color:#5a5344;line-height:1.6;margin:0 0 22px">
+      A função de compra direta automatizada pelo site <b>ainda está sendo desenvolvida</b> pela nossa equipe para oferecer a você a melhor experiência, com novas opções de pagamento e máxima segurança.
+      <br><br>
+      Por enquanto, todos os pedidos estão sendo <b>finalizados exclusivamente pelo WhatsApp Concierge Oficial</b>, com atendimento personalizado e imediato!
+    </p>
+
+    <!-- Botão Principal: Finalizar pelo WhatsApp -->
+    <button class="btn-checkout-whatsapp" id="btn-modal-whatsapp" style="margin-bottom:12px;padding:15px 22px;font-size:12.5px;box-shadow:0 10px 26px rgba(37,211,102,.38)">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.21 8.21 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24z"/></svg>
+      <span>FINALIZAR VIA WHATSAPP AGORA</span>
+    </button>
+
+    <button type="button" id="btn-modal-back" style="background:none;border:none;color:#827a6e;font-size:12.5px;cursor:pointer;padding:6px;font-family:'Jost',sans-serif;text-decoration:underline">
+      Voltar para a sacola
+    </button>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Logo Luméri Perfumes Árabes">
+      <small>Perfumes árabes autênticos,<br>com a elegância do Oriente.</small>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="index.html">Página Inicial</a>
+      <a href="lancamentos.html">Lançamentos</a>
+      <a href="femininos.html">Femininos</a>
+      <a href="masculinos.html">Masculinos</a>
+      <a href="unissex.html">Unissex</a>
+      <a href="kits-presentes.html">Kits Presente</a>
+    </div>
+    <div class="footer-col">
+      <h4>Atendimento</h4>
+      <a href="https://wa.me/5511976547465?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Concierge%20Lum%C3%A9ri" target="_blank" rel="noopener noreferrer" class="footer-link-wa">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+        WhatsApp Concierge
+      </a>
+      <a href="mailto:contato@lumeri.com.br">contato@lumeri.com.br</a>
+      <a href="index.html#contato">Fale Conosco</a>
+      <a href="#">Trocas & Devoluções</a>
+    </div>
+    <div class="footer-col footer-col-about">
+      <h4>A Luméri</h4>
+      <div class="about-links">
+        <a href="index.html#promo">Sobre Nós</a>
+        <span class="sep">•</span>
+        <a href="#">Segurança & Privacidade</a>
+        <span class="sep">•</span>
+        <a href="https://www.instagram.com/lumerri_/?hl=pt" target="_blank" rel="noopener noreferrer" class="footer-link-ig">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Instagram Oficial
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-badges">
+    <div class="wrap footer-badges-wrap">
+      <div class="footer-badge-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Compra 100% Segura</span>
+      </div>
+      <div class="footer-badge-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        <span>Perfumes Originais</span>
+      </div>
+      <div class="footer-badge-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>Envio para todo o Brasil</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">© 2026 Luméri Perfumes Árabes. Todos os direitos reservados. Pix | Visa | Mastercard</div>
+</footer>
+
+<div id="toast" role="status">
+  <i data-lucide="check-circle-2"></i>
+  <span id="toast-text"></span>
+</div>
+
+<script>
+// Format currency
+const R = v => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+// Cart Data Layer (synchronized with localStorage)
+const CartStorage = {
+  KEY: "lumeri_cart_items",
+  COUPON_KEY: "lumeri_cart_coupon",
+  
+  get() {
+    try {
+      const saved = localStorage.getItem(this.KEY);
+      if (saved) return JSON.parse(saved);
+    } catch(e){}
+    // Default starter items if empty on fresh direct visit
+    return [
+      {
+        brand: "Armaf",
+        name: "Club de Nuit Élite",
+        vol: "Eau de Parfum • 105 ml",
+        price: 389.90,
+        img: "../img/club-de-nuit-elite.png",
+        qty: 1
+      },
+      {
+        brand: "Lattafa",
+        name: "Khamrah",
+        vol: "Eau de Parfum • 100 ml",
+        price: 329.90,
+        img: "../img/khamrah-lattafa.png",
+        qty: 1
+      }
+    ];
+  },
+  
+  set(items) {
+    try {
+      localStorage.setItem(this.KEY, JSON.stringify(items));
+    } catch(e){}
+    this.updateHeaderCount();
+  },
+
+  getCoupon() {
+    return localStorage.getItem(this.COUPON_KEY) || "";
+  },
+
+  setCoupon(code) {
+    localStorage.setItem(this.COUPON_KEY, code);
+  },
+
+  updateHeaderCount() {
+    const items = this.get();
+    const count = items.reduce((acc, it) => acc + (it.qty || 1), 0);
+    const badge = document.getElementById("n");
+    if (badge) badge.textContent = count;
+  }
+};
+
+let currentItems = CartStorage.get();
+let activeCoupon = CartStorage.getCoupon();
+let isFreeShipping = false;
+let shippingCost = 0;
+let hasCalculatedShipping = false;
+
+// Toast helper
+const toastEl = document.getElementById("toast");
+const toastTxt = document.getElementById("toast-text");
+function say(msg) {
+  toastTxt.textContent = msg;
+  toastEl.classList.add("on");
+  clearTimeout(say.t);
+  say.t = setTimeout(() => toastEl.classList.remove("on"), 2400);
+}
+
+// Render Cart
+function renderCart() {
+  const contentEl = document.getElementById("cart-content");
+  const emptyEl = document.getElementById("cart-empty");
+  const listEl = document.getElementById("cart-items-list");
+  const countTxt = document.getElementById("cart-count-txt");
+  
+  CartStorage.updateHeaderCount();
+
+  if (currentItems.length === 0) {
+    contentEl.style.display = "none";
+    emptyEl.style.display = "block";
+    updateShippingMeter(0);
+    return;
+  }
+
+  contentEl.style.display = "grid";
+  emptyEl.style.display = "none";
+
+  const totalQty = currentItems.reduce((acc, it) => acc + it.qty, 0);
+  countTxt.textContent = totalQty;
+
+  const resolveImg = (src) => {
+    if (!src) return '';
+    if (src.startsWith('http') || src.startsWith('../img/')) return src;
+    if (src.startsWith('img/')) return '../' + src;
+    return '../img/' + src;
+  };
+
+  // Build Items HTML
+  listEl.innerHTML = currentItems.map((item, idx) => `
+    <article class="cart-item" data-index="${idx}">
+      <div class="item-thumb">
+        <img src="${resolveImg(item.img)}" alt="${item.name} - ${item.brand}" loading="lazy">
+      </div>
+      <div class="item-details">
+        <span class="item-brand">${item.brand}</span>
+        <h3 class="item-name">${item.name}</h3>
+        <span class="item-vol">${item.vol || "Eau de Parfum"}</span>
+        <span class="item-unit-price">${R(item.price)} cada</span>
+      </div>
+      <div class="item-actions">
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(${idx}, -1)" aria-label="Diminuir quantidade">
+            <i data-lucide="minus"></i>
+          </button>
+          <span class="qty-val">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx}, 1)" aria-label="Aumentar quantidade">
+            <i data-lucide="plus"></i>
+          </button>
+        </div>
+        <span class="item-subtotal">${R(item.price * item.qty)}</span>
+        <button class="btn-remove-item" onclick="removeItem(${idx})" title="Remover perfume">
+          <i data-lucide="trash-2"></i>
+        </button>
+      </div>
+    </article>
+  `).join("");
+
+  // Re-calculate Financial Summary
+  recalculateSummary();
+
+  if (window.lucide) lucide.createIcons();
+}
+
+function changeQty(index, delta) {
+  if (!currentItems[index]) return;
+  currentItems[index].qty += delta;
+  if (currentItems[index].qty <= 0) {
+    removeItem(index);
+    return;
+  }
+  CartStorage.set(currentItems);
+  renderCart();
+}
+
+function removeItem(index) {
+  const removed = currentItems[index];
+  currentItems.splice(index, 1);
+  CartStorage.set(currentItems);
+  renderCart();
+  if (removed) say(removed.name + " removido da sacola.");
+}
+
+document.getElementById("btn-clear").addEventListener("click", () => {
+  if (confirm("Deseja realmente esvaziar todos os itens da sacola?")) {
+    currentItems = [];
+    CartStorage.set(currentItems);
+    renderCart();
+    say("Sacola esvaziada.");
+  }
+});
+
+// Summary & Coupon Logic
+function recalculateSummary() {
+  const subtotal = currentItems.reduce((acc, it) => acc + (it.price * it.qty), 0);
+  
+  // Shipping Meter
+  updateShippingMeter(subtotal);
+
+  // Discount
+  let discountRate = 0;
+  if (activeCoupon.toUpperCase() === "LUMERI10") {
+    discountRate = 0.10;
+  }
+  const discountAmount = subtotal * discountRate;
+
+  // Shipping
+  if (subtotal >= 299 || hasCalculatedShipping && isFreeShipping) {
+    shippingCost = 0;
+    document.getElementById("summary-shipping").innerHTML = '<span style="color:var(--success)">Grátis</span>';
+  } else if (hasCalculatedShipping) {
+    shippingCost = 28.50;
+    document.getElementById("summary-shipping").textContent = R(shippingCost);
+  } else {
+    shippingCost = 0;
+    document.getElementById("summary-shipping").textContent = "Grátis acima de R$ 299";
+  }
+
+  const finalTotal = Math.max(0, subtotal - discountAmount + shippingCost);
+
+  // Update UI Elements
+  document.getElementById("summary-subtotal").textContent = R(subtotal);
+  
+  const discountRow = document.getElementById("summary-discount-row");
+  if (discountAmount > 0) {
+    discountRow.style.display = "flex";
+    document.getElementById("summary-discount").textContent = "- " + R(discountAmount);
+    document.getElementById("discount-label").textContent = `Desconto (${activeCoupon.toUpperCase()}):`;
+  } else {
+    discountRow.style.display = "none";
+  }
+
+  document.getElementById("summary-total").textContent = R(finalTotal);
+  
+  // Installments calculation (10x sem juros)
+  const instVal = finalTotal / 10;
+  document.getElementById("summary-installments").textContent = `em até 10x de ${R(instVal)} sem juros`;
+  
+  // Pix with 5% extra discount
+  const pixTotal = finalTotal * 0.95;
+  document.getElementById("summary-pix-txt").textContent = `No Pix com 5% OFF extra: ${R(pixTotal)}`;
+  const modalPixVal = document.getElementById("modal-pix-val");
+  if (modalPixVal) modalPixVal.textContent = R(pixTotal);
+
+  // Update Modal Card Installments select
+  const selectEl = document.getElementById("modal-installments-select");
+  if (selectEl) {
+    selectEl.innerHTML = Array.from({length: 10}, (_, i) => {
+      const n = i + 1;
+      const v = finalTotal / n;
+      return `<option value="${n}">${n}x de ${R(v)} sem juros</option>`;
+    }).join("");
+  }
+}
+
+function updateShippingMeter(subtotal) {
+  const threshold = 299.00;
+  const remaining = Math.max(0, threshold - subtotal);
+  const pct = Math.min(100, (subtotal / threshold) * 100);
+
+  const fillEl = document.getElementById("shipping-progress");
+  const targetEl = document.getElementById("shipping-target-txt");
+
+  fillEl.style.width = pct + "%";
+
+  if (remaining <= 0) {
+    targetEl.innerHTML = '<b style="color:var(--success)">Parabéns! Frete Grátis Conquistado!</b>';
+  } else {
+    targetEl.innerHTML = `Faltam apenas <b>${R(remaining)}</b> para Frete Grátis`;
+  }
+}
+
+// Coupon Form
+document.getElementById("coupon-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const val = document.getElementById("coupon-input").value.trim().toUpperCase();
+  if (val === "LUMERI10") {
+    activeCoupon = val;
+    CartStorage.setCoupon(activeCoupon);
+    recalculateSummary();
+    say("Cupom LUMERI10 de 10% OFF aplicado!");
+  } else if (val === "") {
+    activeCoupon = "";
+    CartStorage.setCoupon("");
+    recalculateSummary();
+    say("Cupom removido.");
+  } else {
+    say("Cupom inválido ou expirado.");
+  }
+});
+
+document.getElementById("btn-quick-coupon").addEventListener("click", () => {
+  document.getElementById("coupon-input").value = "LUMERI10";
+  activeCoupon = "LUMERI10";
+  CartStorage.setCoupon(activeCoupon);
+  recalculateSummary();
+  say("Cupom LUMERI10 ativado com sucesso!");
+});
+
+// Shipping Simulator
+document.getElementById("btn-calc-cep").addEventListener("click", () => {
+  const cep = document.getElementById("cep-input").value.replace(/\D/g, "");
+  if (cep.length !== 8) {
+    say("Digite um CEP válido com 8 dígitos.");
+    return;
+  }
+  hasCalculatedShipping = true;
+  document.getElementById("shipping-status-tag").textContent = "SEDEX: 2 a 4 dias úteis";
+  recalculateSummary();
+  say("Frete calculado para o CEP " + cep);
+});
+
+// WhatsApp Checkout Function
+function triggerWhatsAppOrder() {
+  if (currentItems.length === 0) {
+    say("Adicione itens à sacola primeiro!");
+    return;
+  }
+  const subtotal = currentItems.reduce((acc, it) => acc + (it.price * it.qty), 0);
+  const discountRate = (activeCoupon.toUpperCase() === "LUMERI10") ? 0.10 : 0;
+  const discountAmount = subtotal * discountRate;
+  const total = subtotal - discountAmount;
+
+  let text = "✨ *Olá Luméri Perfumes Árabes!* Gostaria de finalizar meu pedido realizado no site:\n\n";
+  currentItems.forEach(it => {
+    text += `• ${it.qty}x ${it.brand} ${it.name} (${it.vol || '100ml'}) - ${R(it.price * it.qty)}\n`;
+  });
+  text += `\n*Subtotal:* ${R(subtotal)}`;
+  if (discountAmount > 0) text += `\n*Cupom Aplicado:* ${activeCoupon} (-${R(discountAmount)})`;
+  text += `\n*Frete:* Grátis para todo o Brasil`;
+  text += `\n*Total a Pagar:* ${R(total)}`;
+  text += `\n\nPoderiam gerar meu link de pagamento / chave Pix seguro, por favor?`;
+
+  const phone = "5511976547465";
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+}
+
+document.getElementById("btn-whatsapp-order").addEventListener("click", triggerWhatsAppOrder);
+
+// Aviso de Compra no Site em Desenvolvimento
+const modal = document.getElementById("checkout-modal");
+document.getElementById("btn-open-checkout").addEventListener("click", () => {
+  if (currentItems.length === 0) {
+    say("Adicione itens à sacola primeiro!");
+    return;
+  }
+  modal.classList.add("open");
+  if (window.lucide) lucide.createIcons();
+  say("Compra pelo site em desenvolvimento. Finalize pelo WhatsApp Concierge!");
+});
+
+const closeModal = () => modal.classList.remove("open");
+document.getElementById("modal-close").addEventListener("click", closeModal);
+const btnModalBack = document.getElementById("btn-modal-back");
+if (btnModalBack) btnModalBack.addEventListener("click", closeModal);
+
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeModal();
+});
+
+const btnModalWhatsApp = document.getElementById("btn-modal-whatsapp");
+if (btnModalWhatsApp) {
+  btnModalWhatsApp.addEventListener("click", () => {
+    closeModal();
+    triggerWhatsAppOrder();
+  });
+}
+
+// Init
+renderCart();
+</script>
+<script src="../js/search.js"></script>
+</body>
+</html>

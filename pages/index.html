@@ -1,0 +1,647 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luméri Perfumes Árabes</title>
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="../css/search.css">
+<style>
+:root{--bg:#ffffff;--bg2:#f8f3e7;--ink:#14192b;--navy:#0f1d44;--gold:#b8892f;--line:#eadfc6;--card:#ffffff;--btn:#0f1d44;--btnt:#ffffff;--hl:#0f1d44;--mut:#646a7d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0;line-height:1.08}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.top{display:none}
+header{position:absolute;top:0;left:0;width:100%;z-index:100;background:transparent;border:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;transition:all .35s cubic-bezier(.16,1,.3,1)}
+header.scrolled{position:fixed;background:rgba(255,255,255,.42);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);box-shadow:0 8px 32px rgba(0,0,0,.06);border-bottom:1px solid rgba(255,255,255,.65)}
+.header-wrap{position:relative;display:flex;align-items:center;justify-content:space-between;height:90px;transition:height .3s ease}
+header.scrolled .header-wrap{height:76px}
+.brand-logo{display:inline-flex;align-items:center;text-decoration:none;transition:transform .25s ease,opacity .2s}
+.brand-logo:hover{opacity:.9;transform:scale(1.04)}
+.brand-logo img{height:72px;width:auto;max-height:72px;object-fit:contain;display:block;filter:drop-shadow(0 2px 10px rgba(0,0,0,.08));transition:height .3s ease}
+header.scrolled .brand-logo img{height:62px}
+.header-nav{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:36px}
+.header-nav a{font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#181818;text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:6px}
+.header-nav a:hover{color:#8f6d2b}
+.nav-ig-icon{width:14px;height:14px;stroke:#141414;stroke-width:2;vertical-align:middle;display:inline-block;transition:stroke .2s ease,transform .2s ease}
+.header-nav a:hover .nav-ig-icon{stroke:#8f6d2b;transform:scale(1.15)}
+.header-tools{display:flex;align-items:center;gap:18px}
+.tool-btn{background:none;border:none;padding:6px;cursor:pointer;color:#181818;display:flex;align-items:center;justify-content:center;position:relative;transition:transform .2s,color .2s}
+.tool-btn:hover{color:#8f6d2b;transform:scale(1.08)}
+.tool-btn svg{width:20px;height:20px;stroke-width:1.8}
+.cart-pill{position:absolute;top:-2px;right:-4px;background:#141414;color:#fff;font-size:10px;font-weight:600;min-width:16px;height:16px;line-height:16px;border-radius:99px;text-align:center;padding:0 3px}
+.hero{position:relative;min-height:100vh;background-image:url('../img/hero-bg.jpg');background-size:cover;background-position:right center;background-repeat:no-repeat;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.hero-wrap{width:100%;padding-top:130px;padding-bottom:40px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.hero-left{max-width:480px;text-align:left}
+.hero-eyebrow{font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#554e43;margin-bottom:20px;display:block}
+.hero-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(54px,5.8vw,78px);font-weight:500;color:#141414;line-height:1.04;letter-spacing:-.01em;margin:0 0 22px}
+.hero-title em{font-style:italic;font-weight:400;color:#141414}
+.hero-subtitle{font-family:'Jost',sans-serif;font-size:15px;line-height:1.55;color:#433d34;max-width:410px;margin:0 0 34px;font-weight:400}
+.hero-actions{display:flex;align-items:center;gap:14px;margin-bottom:44px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#141414;color:#ffffff;border:1.5px solid #141414;padding:13px 26px;border-radius:9999px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.btn-primary:hover{background:#2b2b2b;border-color:#2b2b2b;transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.btn-primary svg{width:15px;height:15px;stroke-width:2.2;transition:transform .2s ease}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-outline{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#141414;border:1.5px solid #141414;padding:13px 28px;border-radius:9999px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.btn-outline:hover{background:#141414;color:#ffffff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.hero-review-card{display:flex;align-items:center;gap:15px;background:rgba(255,255,255,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.65);border-radius:16px;padding:12px 16px;max-width:350px;box-shadow:0 10px 28px rgba(0,0,0,.04);transition:transform .25s ease}
+.hero-review-card:hover{transform:translateY(-2px)}
+.review-thumb{width:60px;height:60px;border-radius:12px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.08);background:#e6dbca}
+.review-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.review-info{flex:1}
+.review-header{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.review-score{font-family:'Jost',sans-serif;font-weight:700;font-size:16px;color:#141414;letter-spacing:-.01em}
+.review-avatars{display:flex;align-items:center}
+.review-avatars img{width:22px;height:22px;border-radius:50%;border:1.5px solid #ffffff;margin-left:-6px;object-fit:cover}
+.review-avatars img:first-child{margin-left:0}
+.review-text{font-family:'Jost',sans-serif;font-size:11px;line-height:1.35;color:#50493e;margin:0}
+.bt{--c:#e9b07c;display:flex;flex-direction:column;align-items:center;width:var(--w,86px)}
+.bt i{display:block;width:34%;height:22px;background:linear-gradient(90deg,#8a6420,#e6c273,#8a6420);border-radius:3px 3px 0 0}
+.bt b{display:block;width:16%;height:10px;background:#c9a24d}
+.bt s{display:flex;align-items:center;justify-content:center;width:100%;height:var(--h,140px);text-decoration:none;background:linear-gradient(100deg,color-mix(in srgb,var(--c) 70%,#000 0%),color-mix(in srgb,var(--c) 55%,#fff) 40%,var(--c));border-radius:8px;box-shadow:inset 0 0 0 2px #ffffff55,0 14px 24px -10px #0006}
+.bt s span{font:600 10px/1.2 "Cormorant Garamond",serif;letter-spacing:.14em;color:#3a2a10;background:#fffaf0cc;padding:8px 5px;text-align:center;width:62%}
+.perks{width:100%;background:rgba(255,255,255,.38);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.6);border-bottom:1px solid rgba(184,137,47,.3);position:relative;z-index:2;box-shadow:0 -4px 20px rgba(0,0,0,.03)}
+.perks .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:24px;padding-bottom:24px;text-align:center}
+.perks b{display:block;color:#141414;font-weight:600;font-size:16.5px;letter-spacing:.02em;margin-bottom:3px}.perks small{display:block;color:#4a443a;font-size:13.5px;font-weight:400}
+section{padding:54px 0 0}
+h2{font-size:32px;color:var(--navy);margin-bottom:26px}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;text-align:center;max-width:1100px;margin:0 auto}
+.cats a{font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;color:#181818;transition:color .2s;text-transform:none}
+.cats a:hover{color:#8f6d2b}
+.cats .circ{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#ffffff 45%,#f8f2e6 100%);border:1.5px solid rgba(184,137,47,.38);padding:16px;margin-bottom:12px;box-shadow:0 10px 24px rgba(20,25,43,.1),0 2px 8px rgba(184,137,47,.12);transition:all .3s cubic-bezier(.16,1,.3,1);overflow:hidden;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black)}
+.cats .circ img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.08));transition:transform .3s ease}
+.cats a:hover .circ{transform:translateY(-4px) scale(1.04);border-color:#b8892f;box-shadow:0 16px 36px rgba(184,137,47,.3),0 4px 12px rgba(20,25,43,.12)}
+.cats a:hover .circ img{transform:scale(1.06)}
+
+.row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px}
+.row-header{display:flex;flex-direction:column}
+.row-eyebrow{font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8f6d2b;margin-bottom:4px}
+.row h2{font-size:clamp(30px,3.4vw,40px);color:var(--navy);margin-bottom:0}
+.row a.view-all{font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8f6d2b;display:inline-flex;align-items:center;gap:6px;transition:all .2s ease}
+.row a.view-all:hover{color:#141414;transform:translateX(3px)}
+.row a.view-all svg{width:14px;height:14px}
+
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.card{background:#ffffff;border:1.5px solid rgba(184,137,47,.32);border-radius:20px;padding:0 0 16px;display:flex;flex-direction:column;overflow:hidden;position:relative;transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:0 10px 28px rgba(20,25,43,.09),0 2px 6px rgba(184,137,47,.08)}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(184,137,47,.24),0 6px 18px rgba(20,25,43,.12);border-color:rgba(184,137,47,.65)}
+
+.card-badge{position:absolute;top:12px;left:12px;background:rgba(20,25,43,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#e8c777;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid rgba(232,199,119,.3);z-index:2;pointer-events:none}
+
+.card .img-wrap{position:relative;display:flex;align-items:center;justify-content:center;height:210px;padding:14px;background:radial-gradient(circle at 50% 50%,#ffffff 35%,#faf4ea 100%);overflow:hidden;border-bottom:1px solid rgba(234,223,198,.55)}
+.card .img-wrap img{max-height:180px;max-width:100%;object-fit:contain;transition:transform .4s cubic-bezier(.16,1,.3,1),filter .3s ease;filter:drop-shadow(0 10px 18px rgba(0,0,0,.1))}
+.card:hover .img-wrap img{transform:scale(1.08) translateY(-3px);filter:drop-shadow(0 16px 24px rgba(0,0,0,.16))}
+
+.card-info{padding:14px 16px 0;display:flex;flex-direction:column;flex:1}
+.card-brand{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8f6d2b;margin-bottom:3px}
+.card .t{font-family:"Cormorant Garamond",Georgia,serif;font-size:18.5px;font-weight:600;line-height:1.22;color:#141414;margin:0 0 3px;min-height:44px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .vol{font-family:'Jost',sans-serif;font-size:12px;color:#788094;margin:0 0 8px}
+
+.card .st{display:flex;align-items:center;gap:6px;font-size:12px;color:#646a7d;margin-bottom:12px}
+.card .st-stars{color:#d9a441;font-weight:600;letter-spacing:.5px;display:inline-flex;align-items:center;gap:3px}
+.card .st-stars svg{width:13px;height:13px;fill:#d9a441;stroke:#d9a441}
+.card .st-count{color:#8b92a4;font-size:11.5px}
+
+.card-pricing{margin-top:auto;margin-bottom:14px}
+.card .p{font-family:'Jost',sans-serif;font-size:20px;font-weight:700;color:#14192b;line-height:1;margin-bottom:3px;letter-spacing:-.01em}
+.card .installments{font-family:'Jost',sans-serif;font-size:11px;color:#646a7d}
+
+.card .btn-add{margin:0 16px;background:#0f1d44;color:#ffffff;border:1.5px solid #0f1d44;padding:10px 14px;border-radius:999px;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .25s ease}
+.card .btn-add:hover{background:#b8892f;border-color:#b8892f;color:#ffffff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(184,137,47,.35)}
+.card .btn-add svg{width:14px;height:14px;stroke-width:2.2}
+.promo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
+.pbox{position:relative;padding:46px 42px;border-radius:24px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
+.pbox:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.pbox-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;border-radius:9999px;margin-bottom:14px}
+.pbox-tag svg{width:13px;height:13px}
+.pbox h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(32px,3.2vw,42px);font-weight:500;line-height:1.12;margin:0 0 10px}
+.pbox h3 em{font-style:italic}
+.pbox span.pbox-desc{font-family:'Jost',sans-serif;font-size:14.5px;line-height:1.55;margin-bottom:20px}
+.pbox .pbox-action{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
+.coupon-badge{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:9999px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em}
+.coupon-badge svg{width:14px;height:14px}
+
+.pbox.a{background:linear-gradient(135deg,#10131b 0%,#1a2130 50%,#0f1422 100%);color:#f3ead9;border:1px solid rgba(232,199,119,.22);box-shadow:0 14px 34px rgba(15,20,34,.12)}
+.pbox.a::before{content:"";position:absolute;top:-40%;right:-20%;width:280px;height:280px;background:radial-gradient(circle,rgba(232,199,119,.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.pbox.a .pbox-tag{background:rgba(232,199,119,.14);color:#e8c777;border:1px solid rgba(232,199,119,.3)}
+.pbox.a h3{color:#ffffff}
+.pbox.a h3 em{color:#e8c777}
+.pbox.a span.pbox-desc{color:#b6bece}
+.pbox.a .coupon-badge{background:rgba(255,255,255,.07);color:#e8c777;border:1px dashed rgba(232,199,119,.45)}
+.pbox.a .btn-promo{background:#e8c777;color:#0f1422;border:1.5px solid #e8c777;padding:11px 24px;border-radius:9999px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:all .25s ease}
+.pbox.a .btn-promo:hover{background:#ffffff;border-color:#ffffff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(232,199,119,.35)}
+.pbox.a .btn-promo svg{width:14px;height:14px;transition:transform .2s ease}
+.pbox.a .btn-promo:hover svg{transform:translateX(3px)}
+
+.pbox.b{background:linear-gradient(135deg,#fcf8f0 0%,#f5ecda 100%);color:#141414;border:1px solid rgba(184,137,47,.28);box-shadow:0 14px 34px rgba(184,137,47,.08);display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:24px}
+.pbox.b::before{content:"";position:absolute;bottom:-40%;right:-10%;width:240px;height:240px;background:radial-gradient(circle,rgba(184,137,47,.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.pbox.b .pbox-tag{background:rgba(184,137,47,.12);color:#8f6d2b;border:1px solid rgba(184,137,47,.25)}
+.pbox.b h3{color:#141414}
+.pbox.b h3 em{color:#8f6d2b}
+.pbox.b span.pbox-desc{color:#544c40}
+.pbox.b .btn-promo{background:#141414;color:#ffffff;border:1.5px solid #141414;padding:11px 24px;border-radius:9999px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:all .25s ease}
+.pbox.b .btn-promo:hover{background:#2b2b2b;border-color:#2b2b2b;transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.pbox.b .btn-promo svg{width:14px;height:14px;transition:transform .2s ease}
+.pbox.b .btn-promo:hover svg{transform:translateX(3px)}
+.pbox-kit-info{flex:1;z-index:2}
+.pbox-kit-thumb{flex-shrink:0;width:180px;height:180px;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.pbox.b:hover .pbox-kit-thumb{transform:scale(1.08) translateY(-4px) rotate(-2deg)}
+.pbox-kit-thumb img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.15))}
+
+.contact-section{padding:70px 0 20px;position:relative}
+.contact-container{background:linear-gradient(180deg,#fcfaf6 0%,#f5efe4 100%);border:1px solid rgba(184,137,47,.22);border-radius:28px;padding:56px 48px;box-shadow:0 16px 44px rgba(0,0,0,.04);position:relative;overflow:hidden}
+.contact-container::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#8a6420,#e8c777,#b8892f)}
+
+.contact-header{text-align:center;max-width:640px;margin:0 auto 46px}
+.contact-eyebrow{font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8f6d2b;margin-bottom:12px;display:inline-block}
+.contact-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(34px,3.8vw,46px);font-weight:500;color:#141414;line-height:1.1;margin:0 0 14px}
+.contact-title em{font-style:italic;color:#8f6d2b}
+.contact-subtitle{font-family:'Jost',sans-serif;font-size:15px;color:#544c40;line-height:1.6;margin:0}
+
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:stretch}
+
+.contact-channels{display:flex;flex-direction:column;gap:16px;justify-content:center}
+.channel-card{background:rgba(255,255,255,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:18px 22px;display:flex;align-items:center;gap:18px;text-decoration:none;transition:all .28s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 16px rgba(0,0,0,.03)}
+.channel-card:hover{background:#ffffff;transform:translateY(-2px) translateX(3px);box-shadow:0 10px 24px rgba(184,137,47,.12);border-color:rgba(184,137,47,.35)}
+.channel-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#141414 0%,#262626 100%);color:#e8c777;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.channel-icon svg{width:20px;height:20px;stroke-width:2}
+.channel-info{flex:1}
+.channel-tag{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8f6d2b;display:block;margin-bottom:2px}
+.channel-title{font-family:'Jost',sans-serif;font-size:15px;font-weight:600;color:#141414;margin:0 0 2px}
+.channel-desc{font-family:'Jost',sans-serif;font-size:12.5px;color:#635b4e;margin:0}
+.channel-arrow{color:#b8892f;transition:transform .2s ease;display:flex;align-items:center}
+.channel-card:hover .channel-arrow{transform:translateX(4px)}
+.channel-arrow svg{width:18px;height:18px}
+
+.contact-newsletter{background:linear-gradient(145deg,#10131b 0%,#181e2b 100%);border:1px solid rgba(232,199,119,.25);border-radius:22px;padding:36px 34px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;box-shadow:0 14px 34px rgba(15,20,34,.16)}
+.contact-newsletter::after{content:"";position:absolute;top:-50%;right:-20%;width:260px;height:260px;background:radial-gradient(circle,rgba(232,199,119,.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.news-tag{display:inline-flex;align-items:center;gap:6px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e8c777;background:rgba(232,199,119,.12);border:1px solid rgba(232,199,119,.25);padding:5px 12px;border-radius:9999px;width:fit-content;margin-bottom:14px}
+.news-tag svg{width:13px;height:13px}
+.news-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,2.5vw,32px);font-weight:500;color:#ffffff;line-height:1.15;margin:0 0 10px}
+.news-title em{font-style:italic;color:#e8c777}
+.news-desc{font-family:'Jost',sans-serif;font-size:13.5px;color:#a8b2c4;line-height:1.55;margin:0 0 22px}
+
+.vip-form{display:flex;flex-direction:column;gap:12px;width:100%}
+.vip-input-wrap{position:relative;display:flex;align-items:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(232,199,119,.3);border-radius:9999px;padding:5px 6px 5px 18px;transition:all .25s ease;backdrop-filter:blur(6px)}
+.vip-input-wrap:focus-within{border-color:#e8c777;background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(232,199,119,.18)}
+.vip-input-icon{color:#e8c777;display:flex;align-items:center;margin-right:10px}
+.vip-input-icon svg{width:16px;height:16px}
+.vip-input-wrap input{flex:1;background:transparent;border:none;outline:none;color:#ffffff;font-family:'Jost',sans-serif;font-size:14px;padding:9px 0}
+.vip-input-wrap input::placeholder{color:#818b9e}
+.vip-submit-btn{background:#e8c777;color:#0f1422;border:none;border-radius:9999px;padding:12px 24px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .25s ease;flex-shrink:0}
+.vip-submit-btn:hover{background:#ffffff;transform:scale(1.02);box-shadow:0 4px 14px rgba(232,199,119,.4)}
+.vip-submit-btn svg{width:14px;height:14px;transition:transform .2s ease}
+.vip-submit-btn:hover svg{transform:translateX(3px)}
+.news-privacity{font-family:'Jost',sans-serif;font-size:11.5px;color:#788397;margin-top:12px;display:flex;align-items:center;gap:6px}
+.news-privacity svg{width:13px;height:13px;color:#e8c777}
+
+footer{background:#ffffff;border-top:1px solid rgba(234,223,198,.45)}
+footer .wrap{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px;padding-top:40px;padding-bottom:30px}
+footer h4{margin:0 0 12px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+footer a{display:inline-flex;align-items:center;gap:6px;color:var(--mut);padding:3px 0;font-size:13.5px;transition:all .2s ease}
+footer a:hover{color:var(--navy);transform:translateX(2px)}
+footer img{width:130px;display:block;margin:0 auto 10px;object-fit:contain}
+.footer-brand{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:240px}
+.footer-brand small{color:var(--mut);display:block;text-align:center;line-height:1.5;font-size:12.5px}
+.footer-col{display:flex;flex-direction:column}
+.about-links{display:flex;flex-direction:column}
+.about-links .sep{display:none}
+
+.footer-link-wa{color:#1e9e4b!important;font-weight:600}
+.footer-link-wa:hover{color:#25D366!important}
+.footer-link-wa svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+.footer-link-ig{color:var(--navy);font-weight:500}
+.footer-link-ig svg{width:14px;height:14px;flex-shrink:0}
+
+.footer-badges{border-top:1px solid rgba(234,223,198,.4);padding:14px 0;background:rgba(248,243,231,.35)}
+.footer-badges-wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px}
+.footer-badge-item{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--navy);font-weight:500;letter-spacing:.02em}
+.footer-badge-item svg{width:15px;height:15px;color:var(--gold);stroke:var(--gold);flex-shrink:0}
+
+.copy{border-top:1px solid var(--line);text-align:center;padding:16px 20px 24px;font-size:12px;color:var(--mut);line-height:1.6}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--hl);color:#f3ead9;padding:12px 20px;border-radius:9999px;opacity:0;pointer-events:none;transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:999;font-weight:500}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:980px){.hero{background-position:70% center}.hero-wrap{padding-top:110px;padding-bottom:50px}.hero-left{max-width:100%}.header-nav{display:none}.grid,.cats{grid-template-columns:repeat(3,1fr)}.perks .wrap{grid-template-columns:1fr 1fr}.promo{grid-template-columns:1fr}.pbox.b{flex-direction:column;align-items:flex-start}.pbox-kit-thumb{align-self:center;margin-top:14px;width:150px;height:150px}.contact-grid{grid-template-columns:1fr}.contact-container{padding:40px 24px}footer .wrap{grid-template-columns:1fr 1fr;gap:28px 20px;padding-top:36px;padding-bottom:24px}.footer-brand{grid-column:1 / -1;max-width:100%;margin:0 auto;padding-bottom:22px;border-bottom:1px solid rgba(234,223,198,.45)}.footer-col-about{grid-column:1 / -1;border-top:1px solid rgba(234,223,198,.4);padding-top:20px;text-align:center;align-items:center}.footer-col-about h4{margin-bottom:10px}.about-links{flex-direction:row;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px}.about-links .sep{display:inline;color:rgba(100,106,125,.4);font-size:11px}.footer-badges-wrap{gap:12px 18px}.copy{padding-bottom:calc(36px + env(safe-area-inset-bottom,0px))}}
+@media (max-width:520px){.hero-title{font-size:38px}.hero-subtitle{font-size:14px}.hero-actions{flex-direction:column;width:100%}.hero-actions a{width:100%;text-align:center}.grid,.cats{grid-template-columns:repeat(2,1fr)}.grid{gap:12px}.card{border-radius:16px}.card .img-wrap{height:170px;padding:10px}.card .img-wrap img{max-height:145px}.card .card-info{padding:10px 12px 0}.card .t{font-size:16px;min-height:38px}.card .p{font-size:17px}.card .btn-add{margin:0 12px;padding:8px 10px;font-size:10.5px}.card-badge{top:8px;left:8px;font-size:8.5px;padding:3px 7px}.brand-logo img{height:52px}.wrap{padding:0 20px}.perks b{font-size:15px}.perks small{font-size:12.5px}.perks .wrap{gap:16px;padding-top:18px;padding-bottom:18px}.pbox{padding:30px 20px}.pbox h3{font-size:28px}.contact-container{padding:30px 18px;border-radius:20px}.vip-input-wrap{flex-direction:column;border-radius:18px;padding:12px}.vip-input-wrap input{width:100%;text-align:center;padding:6px 0}.vip-submit-btn{width:100%;justify-content:center;margin-top:8px}footer .wrap{gap:22px 16px;padding-top:28px}.footer-brand img{width:120px}.footer-brand small{font-size:12px}footer h4{font-size:12.5px;margin-bottom:8px}footer a{font-size:12.5px;padding:2.5px 0}.about-links{gap:10px}.footer-badge-item{font-size:11px}}
+.floating-whatsapp{position:fixed;right:28px;bottom:28px;z-index:995;display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#ffffff;padding:12px 20px 12px 16px;border-radius:9999px;box-shadow:0 10px 28px rgba(37,211,102,.38),0 4px 12px rgba(0,0,0,.15);text-decoration:none;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.04em;transition:all .28s cubic-bezier(.16,1,.3,1)}
+.floating-whatsapp:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 34px rgba(37,211,102,.48),0 6px 16px rgba(0,0,0,.2);color:#ffffff}
+.floating-whatsapp svg{width:22px;height:22px;fill:currentColor;flex-shrink:0}
+@media(max-width:640px){.floating-whatsapp span{display:none}.floating-whatsapp{padding:14px;right:18px;bottom:20px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header id="main-header">
+  <div class="wrap header-wrap">
+    <a href="#" class="brand-logo" aria-label="Luméri Perfumes Árabes">
+      <img src="../img/logo.png" alt="Luméri Perfumes Árabes">
+    </a>
+    <nav class="header-nav">
+      <a href="#">INÍCIO</a>
+      <a href="#vendidos">COLEÇÕES</a>
+      <a href="#promo">SOBRE NÓS</a>
+      <a href="#contato">CONTATO</a>
+      <a href="https://www.instagram.com/lumerri_/?hl=pt" target="_blank" rel="noopener noreferrer" aria-label="Instagram Luméri">BLOG <svg class="nav-ig-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+    </nav>
+    <div class="header-tools">
+      <button class="tool-btn" id="btn-search-trigger" aria-label="Buscar"><i data-lucide="search"></i></button>
+      <a href="sacola.html" class="tool-btn" id="cart" aria-label="Ver Sacola de Compras">
+        <i data-lucide="shopping-bag"></i>
+        <span id="n" class="cart-pill">0</span>
+      </a>
+      <button class="tool-btn" aria-label="Minha conta"><i data-lucide="user"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-wrap">
+    <div class="hero-left">
+      <span class="hero-eyebrow">AROMA É MEMÓRIA</span>
+      <h1 class="hero-title">A Essência de<br>Cada <em>Momento</em></h1>
+      <p class="hero-subtitle">Fragrâncias atemporais criadas com ingredientes nobres e raros para despertar emoções, marcar presença e ser inesquecível.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#vendidos">
+          <span>EXPLORAR COLEÇÕES</span>
+          <i data-lucide="arrow-right"></i>
+        </a>
+        <a class="btn-outline" href="#cat">CONHEÇA A LUMÉRI</a>
+      </div>
+      <div class="hero-review-card">
+        <div class="review-thumb">
+          <img src="../img/bottle-thumb.jpg" alt="Perfume Luméri">
+        </div>
+        <div class="review-info">
+          <div class="review-header">
+            <span class="review-score">4.9/5</span>
+            <div class="review-avatars">
+              <img src="../img/avatar1.jpg" alt="Avatar 1">
+              <img src="../img/avatar2.jpg" alt="Avatar 2">
+              <img src="../img/avatar3.jpg" alt="Avatar 3">
+            </div>
+          </div>
+          <p class="review-text">Fragrâncias exclusivas e marcantes que elevam a sua presença no dia a dia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="perks"><div class="wrap">
+  <div><b>Frete grátis</b><small>Acima de R$ 299</small></div>
+  <div><b>100% originais</b><small>Importados e lacrados</small></div>
+  <div><b>Pagamento seguro</b><small>Pix, cartão e boleto</small></div>
+  <div><b>Troca fácil</b><small>7 dias para devolver</small></div>
+  </div></div>
+</div>
+
+<section id="cat"><div class="wrap"><h2>Compre por categoria</h2><div class="cats" id="cats"></div></div></section>
+
+<section id="vendidos"><div class="wrap">
+<div class="row">
+  <div class="row-header">
+    <span class="row-eyebrow">Alta Perfumaria Árabe</span>
+    <h2>Mais Vendidos</h2>
+  </div>
+  <a href="#vendidos" class="view-all">
+    <span>Ver Catálogo Completo</span>
+    <i data-lucide="arrow-right"></i>
+  </a>
+</div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="promo">
+  <div class="wrap">
+    <div class="promo">
+      <div class="pbox a">
+        <span class="pbox-tag"><i data-lucide="sparkles"></i> Por Tempo Limitado</span>
+        <h3><em>10% OFF</em> em Todo o Site</h3>
+        <span class="pbox-desc">Celebre o melhor da alta perfumaria árabe com um benefício especial de boas-vindas.</span>
+        <div class="pbox-action">
+          <span class="coupon-badge"><i data-lucide="tag"></i> Cupom: LUMERI10</span>
+          <a class="btn-promo" href="#vendidos">
+            <span>Aproveitar Agora</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="pbox b">
+        <div class="pbox-kit-info">
+          <span class="pbox-tag"><i data-lucide="gift"></i> Kits de Presente</span>
+          <h3>Kits de Luxo <em>Edição Especial</em></h3>
+          <span class="pbox-desc">Estojos refinados contendo perfume 100ml, travel spray portátil e shower gel — a escolha perfeita para presentear com sofisticação.</span>
+          <div class="pbox-action">
+            <a class="btn-promo" href="kits-presentes.html">
+              <span>Explorar Kits</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="pbox-kit-thumb">
+          <img src="../img/kit-presente.png" alt="Destaque Kit de Presente Lattafa Asad Bourbon" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact-section">
+  <div class="wrap">
+    <div class="contact-container">
+      <div class="contact-header">
+        <span class="contact-eyebrow">Atendimento & Concierge Exclusivo</span>
+        <h2 class="contact-title">Fale com Nossos <em>Especialistas</em></h2>
+        <p class="contact-subtitle">Dúvidas sobre notas olfativas, recomendações personalizadas ou rastreio do seu pedido? Nossa equipe de consultores está à sua disposição.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-channels">
+          <a href="https://wa.me/5511976547465?text=Ol%C3%A1%2C%20gostaria%20de%20consultoria%20sobre%20os%20perfumes%20Lum%C3%A9ri" target="_blank" rel="noopener noreferrer" class="channel-card">
+            <div class="channel-icon">
+              <i data-lucide="message-circle"></i>
+            </div>
+            <div class="channel-info">
+              <span class="channel-tag">Canal Imediato • (11) 97654-7465</span>
+              <h4 class="channel-title">WhatsApp Concierge</h4>
+              <p class="channel-desc">+55 (11) 97654-7465 • Atendimento e consultoria em tempo real</p>
+            </div>
+            <div class="channel-arrow">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </a>
+
+          <a href="mailto:contato@lumeri.com.br" class="channel-card">
+            <div class="channel-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <div class="channel-info">
+              <span class="channel-tag">E-mail Corporativo</span>
+              <h4 class="channel-title">contato@lumeri.com.br</h4>
+              <p class="channel-desc">Atendimento dedicado para pedidos, dúvidas e suporte</p>
+            </div>
+            <div class="channel-arrow">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/lumerri_/?hl=pt" target="_blank" rel="noopener noreferrer" class="channel-card">
+            <div class="channel-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-tag">Comunidade & Lançamentos</span>
+              <h4 class="channel-title">Instagram Oficial @lumerri_</h4>
+              <p class="channel-desc">Novos lotes raros, avaliações reais e os bastidores da loja</p>
+            </div>
+            <div class="channel-arrow">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-newsletter">
+          <span class="news-tag"><i data-lucide="gem"></i> Convite Privilège</span>
+          <h3 class="news-title">Receba Lançamentos & Benefícios <em>Privés</em></h3>
+          <p class="news-desc">Cadastre seu e-mail para receber em primeira mão novos frascos importados, avisos de reposição de lotes raros e convites fechados da Luméri.</p>
+          <form id="f" class="vip-form">
+            <div class="vip-input-wrap">
+              <span class="vip-input-icon"><i data-lucide="mail"></i></span>
+              <input type="email" required placeholder="Digite seu melhor e-mail..." aria-label="E-mail para newsletter">
+              <button type="submit" class="vip-submit-btn">
+                <span>Inscrever-se</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </form>
+          <div class="news-privacity">
+            <i data-lucide="shield-check"></i>
+            <span>Seus dados são confidenciais. Sem envio de spam.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Logo Luméri Perfumes Árabes">
+      <small>Perfumes árabes autênticos,<br>com a elegância do Oriente.</small>
+    </div>
+    <div class="footer-col">
+      <h4>Loja</h4>
+      <a href="lancamentos.html">Lançamentos</a>
+      <a href="femininos.html">Femininos</a>
+      <a href="masculinos.html">Masculinos</a>
+      <a href="unissex.html">Unissex</a>
+      <a href="kits-presentes.html">Kits presente</a>
+    </div>
+    <div class="footer-col">
+      <h4>Atendimento</h4>
+      <a href="https://wa.me/5511976547465?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Concierge%20Lum%C3%A9ri" target="_blank" rel="noopener noreferrer" class="footer-link-wa">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+        WhatsApp Concierge
+      </a>
+      <a href="#">Ajuda e perguntas</a>
+      <a href="#">Entrega</a>
+      <a href="#">Trocas e devoluções</a>
+      <a href="#contato">Fale conosco</a>
+    </div>
+    <div class="footer-col footer-col-about">
+      <h4>A Luméri</h4>
+      <div class="about-links">
+        <a href="#">Nossa história</a>
+        <span class="sep">•</span>
+        <a href="#">Ingredientes</a>
+        <span class="sep">•</span>
+        <a href="https://www.instagram.com/lumerri_/?hl=pt" target="_blank" rel="noopener noreferrer" class="footer-link-ig">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Instagram Oficial
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-badges">
+    <div class="wrap footer-badges-wrap">
+      <div class="footer-badge-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Compra 100% Segura</span>
+      </div>
+      <div class="footer-badge-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        <span>Perfumes Originais</span>
+      </div>
+      <div class="footer-badge-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>Envio para todo o Brasil</span>
+      </div>
+    </div>
+  </div>
+  <div class="copy">© 2026 Luméri Perfumes Árabes. Todos os direitos reservados. Pix • Visa • Mastercard</div>
+</footer>
+<div id="toast" role="status"></div>
+
+<script>
+const cats=[
+  ["Femininos","../img/feminino.png","femininos.html"],
+  ["Masculinos","../img/masculino.png","masculinos.html"],
+  ["Unissex","../img/khamrah-lattafa.png","unissex.html"],
+  ["Kits Presente","../img/kit-presente.png","kits-presentes.html"],
+  ["Lançamentos","../img/club-de-nuit-elite.png","lancamentos.html"]
+];
+document.getElementById("cats").innerHTML=cats.map(([n,img,url])=>`<a href="${url}"><div class="circ"><img src="${img}" alt="${n}" loading="lazy"></div><span>${n}</span></a>`).join("");
+
+const P=[
+  {
+    brand:"Lattafa",
+    name:"Yara Rose",
+    vol:"Eau de Parfum • 100 ml",
+    price:229.90,
+    rating:"4.9",
+    reviews:142,
+    badge:"Mais Vendido",
+    img:"../img/yara-rose.png",
+    installments:"10x de R$ 22,99 s/ juros"
+  },
+  {
+    brand:"Lattafa",
+    name:"Asad Black",
+    vol:"Eau de Parfum • 100 ml",
+    price:249.90,
+    rating:"4.9",
+    reviews:198,
+    badge:"Destaque",
+    img:"../img/asad-preto.png",
+    installments:"10x de R$ 24,99 s/ juros"
+  },
+  {
+    brand:"Armaf",
+    name:"Club de Nuit Maleka",
+    vol:"Eau de Parfum • 105 ml",
+    price:389.90,
+    rating:"5.0",
+    reviews:67,
+    badge:"Lançamento 2025",
+    img:"../img/club-de-nuit-maleka.png",
+    installments:"10x de R$ 38,99 s/ juros"
+  },
+  {
+    brand:"Lattafa",
+    name:"Musamam White Intense",
+    vol:"Eau de Parfum • 100 ml",
+    price:349.90,
+    rating:"4.9",
+    reviews:84,
+    badge:"Exclusivo",
+    img:"../img/musamam-white-intense.png",
+    installments:"10x de R$ 34,99 s/ juros"
+  },
+  {
+    brand:"Lattafa",
+    name:"Fakhar Extrait Gold",
+    vol:"Eau de Parfum • 100 ml",
+    price:269.90,
+    rating:"4.8",
+    reviews:112,
+    badge:"Alta Fixação",
+    img:"../img/fakhar-gold.png",
+    installments:"10x de R$ 26,99 s/ juros"
+  },
+  {
+    brand:"Lattafa",
+    name:"Fakhar Black Men",
+    vol:"Eau de Parfum • 100 ml",
+    price:259.90,
+    rating:"4.8",
+    reviews:156,
+    badge:"Clássico Árabe",
+    img:"../img/fakhar-black.png",
+    installments:"10x de R$ 25,99 s/ juros"
+  }
+];
+
+const R=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+const toSlug=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+
+document.getElementById("grid").innerHTML=P.map(p=>`
+  <article class="card" id="prod-${toSlug(p.name)}" data-name="${p.name}">
+    <span class="card-badge">${p.badge}</span>
+    <div class="img-wrap">
+      <img src="${p.img}" alt="${p.name} - ${p.brand}" loading="lazy">
+    </div>
+    <div class="card-info">
+      <span class="card-brand">${p.brand}</span>
+      <h3 class="t">${p.name}</h3>
+      <span class="vol">${p.vol}</span>
+      <div class="st">
+        <span class="st-stars"><i data-lucide="star"></i> ${p.rating}</span>
+        <span class="st-count">(${p.reviews} avaliações)</span>
+      </div>
+      <div class="card-pricing">
+        <div class="p">${R(p.price)}</div>
+        <div class="installments">${p.installments}</div>
+      </div>
+    </div>
+    <button class="btn-add" data-n="${p.name}" aria-label="Adicionar ${p.name} à sacola">
+      <i data-lucide="shopping-bag"></i>
+      <span>Adicionar</span>
+    </button>
+  </article>
+`).join("");
+const CartHelper={
+  KEY:"lumeri_cart_items",
+  get(){try{const s=localStorage.getItem(this.KEY);if(s)return JSON.parse(s)}catch(e){}return[]},
+  add(product){
+    const items=this.get();
+    const existing=items.find(it=>it.name===product.name);
+    if(existing){existing.qty=(existing.qty||1)+1}
+    else{items.push({brand:product.brand,name:product.name,vol:product.vol||"Eau de Parfum",price:product.price,img:product.img,qty:1})}
+    localStorage.setItem(this.KEY,JSON.stringify(items));
+    this.updateBadge();
+  },
+  updateBadge(){
+    const items=this.get();
+    const count=items.reduce((acc,it)=>acc+(it.qty||1),0);
+    const badge=document.getElementById("n");
+    if(badge)badge.textContent=count;
+  }
+};
+CartHelper.updateBadge();
+
+const t=document.getElementById("toast");
+function say(m){t.innerHTML=m;t.classList.add("on");clearTimeout(say.x);say.x=setTimeout(()=>t.classList.remove("on"),2800)}
+document.getElementById("grid").addEventListener("click",e=>{
+  const b=e.target.closest("button.btn-add");
+  if(!b)return;
+  const prodName=b.dataset.n;
+  const prod=P.find(it=>it.name===prodName);
+  if(prod){
+    CartHelper.add(prod);
+    say(`<span><b>${prod.name}</b> adicionado à sacola!</span> <a href="sacola.html" style="color:#e8c777;font-weight:700;text-decoration:underline;margin-left:8px">Ver Sacola &rarr;</a>`);
+  }
+});
+document.getElementById("f").addEventListener("submit",e=>{e.preventDefault();e.target.reset();say("Pronto! Você vai receber nossas novidades.")});
+const headerEl=document.querySelector("header");
+const checkHeaderScroll=()=>{if(window.scrollY>20){headerEl.classList.add("scrolled")}else{headerEl.classList.remove("scrolled")}};
+window.addEventListener("scroll",checkHeaderScroll,{passive:true});
+checkHeaderScroll();
+if(window.lucide){lucide.createIcons();}
+</script>
+<a href="https://wa.me/5511976547465?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20os%20perfumes%20Lum%C3%A9ri" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Falar pelo WhatsApp com a Luméri">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.21 8.21 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24z"/></svg>
+  <span>Falar pelo WhatsApp</span>
+</a>
+<script src="../js/search.js"></script>
+</body>
+</html>
