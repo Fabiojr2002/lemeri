@@ -1,8 +1,36 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "^/$",
-      "dest": "/pages/index.html"
+      "source": "/",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/masculinos.html",
+      "destination": "/pages/masculinos.html"
+    },
+    {
+      "source": "/femininos.html",
+      "destination": "/pages/femininos.html"
+    },
+    {
+      "source": "/unissex.html",
+      "destination": "/pages/unissex.html"
+    },
+    {
+      "source": "/lancamentos.html",
+      "destination": "/pages/lancamentos.html"
+    },
+    {
+      "source": "/kits-presentes.html",
+      "destination": "/pages/kits-presentes.html"
+    },
+    {
+      "source": "/sacola.html",
+      "destination": "/pages/sacola.html"
     }
   ]
 }
